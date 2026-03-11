@@ -1,122 +1,129 @@
-# 🎤 Speech Emotion Recognition (SER)
+# Speech Emotion Recognition 🎤
 
-A Deep Learning-based Speech Emotion Recognition system that classifies human speech into **8 emotion categories** using advanced audio feature extraction and a 1D CNN model.
+A deep learning system that analyzes **human speech signals** and predicts the **underlying emotion** present in the audio.
 
----
-
-## 🚀 Overview
-
-This project combines multiple public speech datasets and applies feature engineering + deep learning to detect emotions from voice samples.
-
-The system supports:
-- 🎧 WAV file upload  
-- 🎙️ Real-time microphone recording  
-- 📊 Emotion prediction with confidence scores  
+The model learns emotional patterns from voice features and classifies speech into **8 emotion categories**.
 
 ---
 
-## 🎭 Emotions Detected
+## Project Idea
 
-- Angry  
-- Calm  
-- Disgust  
-- Fear  
-- Happy  
-- Neutral  
-- Sad  
-- Surprise  
+Human speech carries emotional information beyond just words.  
+This project aims to automatically **detect emotions from voice recordings** using signal processing and deep learning.
+
+The system can analyze an input audio clip and determine the speaker's emotional state.
 
 ---
 
-## 🧠 Model Architecture
+## Emotions Recognized
 
-- 1D Convolutional Neural Network (CNN)
-- Batch Normalization
-- MaxPooling
-- Dropout Regularization
-- Class Weight Balancing
-- Early Stopping + Learning Rate Scheduler
+The model predicts the following emotions:
 
-**Final Test Accuracy: ~67% (8-class classification)**
-
----
-
-## 📂 Datasets Used
-
-Merged and unified 12,000+ audio samples from:
-
-- RAVDESS  
-- CREMA-D  
-- TESS  
-- SAVEE  
-
-After augmentation, dataset size increased to **36,000+ samples**.
+- Angry
+- Calm
+- Disgust
+- Fear
+- Happy
+- Neutral
+- Sad
+- Surprise
 
 ---
 
-## 🎛️ Feature Engineering
+## System Workflow
 
-Extracted using Librosa:
-
-- MFCC (40 coefficients)  
-- Chroma STFT  
-- Mel Spectrogram  
-- Zero Crossing Rate (ZCR)  
-- RMS Energy  
+1. Audio input is provided through file upload or microphone recording.
+2. Important audio features are extracted using signal processing techniques.
+3. The extracted features are passed to a trained **1D CNN model**.
+4. The model outputs the predicted emotion along with confidence scores.
 
 ---
 
-## 🔄 Data Augmentation
+## Dataset
 
-To improve generalization:
+The training data is created by combining multiple public emotion speech datasets:
 
-- Noise Injection  
-- Time Stretching  
-- Pitch Shifting  
+- RAVDESS
+- CREMA-D
+- TESS
+- SAVEE
 
----
+Total samples before augmentation: **12,000+**
 
-## 🛠 Tech Stack
-
-- Python  
-- TensorFlow / Keras  
-- Librosa  
-- Scikit-learn  
-- NumPy  
-- Seaborn  
-- Streamlit  
+After applying augmentation techniques, the dataset increased to **36,000+ samples**.
 
 ---
 
-## 📦 Installation
+## Feature Extraction
+
+Audio features are extracted using the **Librosa** library.
+
+Features used:
+
+- MFCC (Mel Frequency Cepstral Coefficients)
+- Chroma Features
+- Mel Spectrogram
+- Zero Crossing Rate
+- RMS Energy
+
+These features capture important characteristics of speech such as **tone, pitch, energy, and frequency distribution**.
+
+---
+
+## Data Augmentation
+
+To improve generalization and reduce overfitting, the dataset is augmented using:
+
+- Noise Injection
+- Time Stretching
+- Pitch Shifting
+
+---
+
+## Model Architecture
+
+The emotion classifier is built using a **1D Convolutional Neural Network**.
+
+Main components:
+
+- Convolution layers for feature learning
+- Batch normalization
+- Max pooling layers
+- Dropout for regularization
+
+Training improvements include:
+
+- Class weight balancing
+- Early stopping
+- Learning rate scheduling
+
+Final test accuracy: **~67% for 8-class classification**
+
+---
+
+## Tech Stack
+
+- Python
+- TensorFlow / Keras
+- Librosa
+- Scikit-learn
+- NumPy
+- Streamlit
+
+---
+
+
+## Running the Project
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/Rishabh-Shukla-15/Speech-Emotion-Recognition.git
-cd Speech-Emotion-Recognition
+
+### install dependency
 pip install -r requirements.txt
-```
-
----
-
-## ▶️ Run the Application
-
-```bash
 streamlit run app.py
-```
 
----
 
-## 📁 Saved Model Files
 
-- `ser_model.keras`
-- `scaler.pkl`
-- `encoder.pkl`
-
----
-
-## 👨‍💻 Author
-
-Rishabh Shukla  
-B.Tech – Artificial Intelligence & Machine Learning  
-NIT Kurukshetra  
-# Speech-Emotion-Recognition
+git clone https://github.com/yourusername/Speech-Emotion-Recognition.git
+cd Speech-Emotion-Recognition
