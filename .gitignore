@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Model files
+ser_model.keras
+ser_model.h5
+*.pkl
+
+# Audio files
+*.wav
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
